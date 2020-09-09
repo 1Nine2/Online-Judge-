@@ -1,0 +1,27 @@
+n = int(input())
+for i in range(n):
+  a, b = map(int, input().split())
+  x=[]
+  y=[]
+  num = a+2
+  for j in range(0,num,2):
+    x.append(j)
+  for k in range(1,num,2):
+    y.append(k)
+  z = list(zip(x,y))
+  x.sort(reverse=True)
+  y.sort(reverse=True)
+  z2 = list(zip(x,y))
+  result=tuple(z)
+  result2=tuple(z2)
+  tp=()
+  if(b%2==0):
+    tp =(b,b+1)
+  else:
+    tp=(b-1,b)
+  c1 = result.index(tp)
+  c2 = result2.index(tp)
+  if(c1+1>c2+1):
+    print(c2+1)
+  else:
+    print(c1+1)
